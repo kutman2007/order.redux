@@ -1,4 +1,4 @@
-import { ADD_ORDER, DELETE_ORDER } from "../actions";
+import { ADD_ORDER, DELETE_ORDER, INCREASE_QUANTITY,DECREASE_QUANTITY } from "../actions";
 
 
 const defaultState = {
@@ -43,6 +43,24 @@ export const rootReducer = (state = defaultState, action) => {
         ...state,
         orders: updatedOrders,
       };
+      case INCREASE_QUANTITY:
+        return {
+          ...state,
+          orders: state.orders.map((order, index) =>
+            index === action.payload
+              ? { ...order, count: order.count + 1, sum: order.sum + order.price }
+              : order
+          ),
+        };
+      case DECREASE_QUANTITY:
+        return {
+          ...state,
+          orders: state.orders.map((order, index) =>
+            index === action.payload && order.count > 1
+              ? { ...order, count: order.count - 1, sum: order.sum - order.price }
+              : order
+          ),
+        };
     default:
       return state;
   }

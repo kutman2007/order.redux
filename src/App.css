@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(104, 226, 104);
+}
+img{
+   width: 150px;
+   height: 150px;
+}
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   color: rgb(255, 255, 0);
+}
+.plus{
+    cursor: pointer;
+    margin-top: 10px;
+    color: rgb(26, 6, 180);
+}
+.plus:hover{
+    color: black;
+}
+.clear{
+    cursor: pointer;
+    color: rgb(26, 6, 180);
+    margin-left: 15px;
+}
+.clear:hover{
+    color: black;
+}
+b,.food{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    color: yellow;
+}
